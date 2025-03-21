@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import SideBar from '@/components/SideBar.vue';
+import DetailLayout from './DetailLayout.vue';
 
 const sidebarItems = [
   {
@@ -22,6 +23,7 @@ const sidebarItems = [
         <span>{{ item.label }}</span>
       </div>
     </SideBar>
+    <DetailLayout title="neviditelna-univerzita.cz"></DetailLayout>
   </main>
 </template>
 
