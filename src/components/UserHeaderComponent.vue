@@ -36,7 +36,7 @@ const openUserMenu = (event: MouseEvent): void => {
 <template>
   <div class="user-header">
     <button @click="openUserMenu" class="p-button user-header-button">
-      <i class="pi pi-user"></i>
+      <i class="bi bi-person-circle"></i>
       
       <span v-if="userName !== null">{{ userName }}</span>
       <span v-else>Log in</span>
@@ -50,13 +50,15 @@ const openUserMenu = (event: MouseEvent): void => {
 .user-header-button {
     background-color: var(--blue-primary);
     border: none;
-    color: white;    
+    color: white;
+    display: flex;
+    gap: 12px;
 }
 .user-header-button:active {
     background-color: var(--blue-primary); 
 }
 .p-button:not(:disabled):hover {
     background-color: var(--blue-primary); 
-    border: none
+    border: none;
 }
 </style>
