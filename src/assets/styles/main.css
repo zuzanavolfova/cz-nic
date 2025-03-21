@@ -1,12 +1,17 @@
 @import './base.css';
+@import './colors.scss';
+@import 'primeicons/primeicons.css';
+
 
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   font-weight: normal;
 }
 
+h1 {
+  font-size: 18px;
+}
 a,
 .green {
   text-decoration: none;
