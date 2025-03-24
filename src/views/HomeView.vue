@@ -31,6 +31,7 @@ const sidebarItems = [
 .main {
   display: flex;
   height: 100%;
+  margin-top: 60px
 }
 
 .side-bar__item {
