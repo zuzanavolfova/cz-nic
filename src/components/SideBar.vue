@@ -24,6 +24,7 @@ defineProps({
   flex-direction: column;
   width: 160px;
   height: 100vh;
+  padding: 20px 0;
   background-color: white;
   color: var(--text-light-grey);
   border-right: 1px solid rgb(196, 195, 195);
