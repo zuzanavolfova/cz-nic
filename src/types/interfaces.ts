@@ -24,8 +24,8 @@ export interface StateFlags {
 }
 
 export interface Publish {
-    organization: boolean,
-    name: boolean
+  organization: boolean,
+  name: boolean
 }
 export interface Contacts{
   handle: string,

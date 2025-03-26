@@ -37,7 +37,7 @@ const dataItems =  computed<Contacts>(() => store.data[props.items]);
                     <span style="grid-area: value; color: var(--blue-primary)"> {{ item.handle}} </span>
                 </div>
             </div>
-        </template>   
+        </template>
     </Card>
 </template>
 <style lang="scss" scoped>
