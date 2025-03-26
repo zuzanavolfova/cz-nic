@@ -1,6 +1,7 @@
 export interface UserInfo {
   name: string | null
   role: string | null
+  password: string | null
   id: number | null
 }
 

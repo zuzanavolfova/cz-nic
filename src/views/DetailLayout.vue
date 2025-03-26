@@ -28,6 +28,8 @@ const dataStateFlags = computed<StateFlags[]>(()=> data.value.state_flags.flags)
 
 //switch to handle verbose view
 const detailedInfo = ref<boolean>(false);
+const showPassword = ref<boolean>(false);
+const password = computed(() => dataStore.user.password)
 
 </script>
 <template>
@@ -46,7 +48,8 @@ const detailedInfo = ref<boolean>(false);
                                 <div class="detail-layout__content__main__row__title">
                                     AuthInfo:
                                 </div>
-                                <button class="button">SHOW</button>
+                                <button v-if="!showPassword" class="button" @click="showPassword = !showPassword">SHOW</button>
+                                <span v-if="showPassword" @click="showPassword = !showPassword">{{ password }}</span>
                             </div>
                             <div class="detail-layout__content__main__row grid-cols-1">
                                     <div class="detail-layout__content__main__row__title">Expires at:</div>

@@ -10,6 +10,7 @@ export const useStore = defineStore('dataStore', {
       user: {
         name: 'Guest',
         role: 'admin',
+        password: 'Abcd123#',
         id: 1
       } as UserInfo | null,
       data: data,
