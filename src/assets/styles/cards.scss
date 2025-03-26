@@ -1,0 +1,19 @@
+// @import "@/assets/styles/cards"; 
+
+@mixin card-row-no-icon {
+    display: grid;
+    grid-template-columns: 110px 170px;
+    grid-template-areas: "title value";
+}
+
+@mixin card-row-with-icon {
+    display: grid;
+    grid-template-columns: 20px 110px 170px;
+    grid-template-areas: "icon title value";
+}
+@mixin card-title {
+    background-color: var(--dark-background);
+    margin: -20px -20px 0 -20px;
+    padding: 8px 18px;
+    border-radius: 12px 12px 0 0 ;
+}

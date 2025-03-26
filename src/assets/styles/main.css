@@ -1,6 +1,7 @@
 @import './base.css';
 @import './colors.scss';
 @import 'primeicons/primeicons.css';
+@import 'cards.scss';
 
 
 #app {

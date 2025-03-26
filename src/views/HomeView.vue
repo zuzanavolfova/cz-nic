@@ -28,21 +28,21 @@ const sidebarItems = [
 </template>
 
 <style lang="scss" scoped>
-.main {
-  display: flex;
-  height: 100%;
-  margin-top: 60px;
-}
+  .main {
+    display: flex;
+    height: 100%;
+    margin-top: 60px;
+  }
 
-.side-bar__item {
-  height: 30px;
-  padding: 3px 6px;
-  color: var(--text-dark-grey);
-  font-size: 14px;
-  font-weight: bold;
-  background-color: var(--orange-primary);
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
+  .side-bar__item {
+    height: 30px;
+    padding: 3px 6px;
+    color: var(--text-dark-grey);
+    font-size: 14px;
+    font-weight: bold;
+    background-color: var(--orange-primary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
 </style>

@@ -106,6 +106,8 @@ const detailedInfo = ref<boolean>(false);
     </div>
 </template>
 <style lang="scss" scoped>
+    @import "@/assets/styles/cards"; 
+    
     .detail-layout {
         width: 100%;
         padding: 20px;
@@ -156,19 +158,19 @@ const detailedInfo = ref<boolean>(false);
     .grid-cols-1 {
         grid-column: 1;
     }
-.active {
-    color: var(--green-primary)
-}
-.inactive {
-    color: var(--warning-color)
-}
-    :deep(.p-toggleswitch) {
-        &.p-toggleswitch-checked {
-            .p-toggleswitch-slider {
-                background-color: var(--blue-primary) !important;
+    .active {
+        color: var(--green-primary)
+    }
+    .inactive {
+        color: var(--warning-color)
+    }
+        :deep(.p-toggleswitch) {
+            &.p-toggleswitch-checked {
+                .p-toggleswitch-slider {
+                    background-color: var(--blue-primary) !important;
+                }
             }
         }
-    }
 
     button {
         background-color: var(--blue-primary);
@@ -184,9 +186,6 @@ const detailedInfo = ref<boolean>(false);
         gap: 12px;
     }
     .card__title {
-        background-color: var(--dark-background);
-        margin: -20px -20px 0 -20px;
-        padding: 8px 18px;
-        border-radius: 12px 12px 0 0 ;
+        @include card-title
     }
 </style>

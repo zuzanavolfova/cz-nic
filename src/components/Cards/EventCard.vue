@@ -71,34 +71,32 @@
 
 
 <style lang="scss" scoped>
-.event-card {
-    width: 100%;
-    padding: 20px;
-    background-color: var(--medium-background);
-    &__content {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        &__container {
-            display: grid;
-            grid-template-columns: 2fr 2fr;
-        }
-        &__row {
-            display: grid;
-            grid-template-columns: 2fr 2fr;
-            &__title {
-                font-weight: 600;
+    @import "@/assets/styles/cards"; 
+    .event-card {
+        width: 100%;
+        padding: 20px;
+        background-color: var(--medium-background);
+        &__title  {
+            @include card-title
+        };
+        &__content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            &__container {
+                display: grid;
+                grid-template-columns: 2fr 2fr;
             }
-            &__text-blue {
-                color: var(--blue-primary);
+            &__row {
+                display: grid;
+                grid-template-columns: 2fr 2fr;
+                &__title {
+                    font-weight: 600;
+                }
+                &__text-blue {
+                    color: var(--blue-primary);
+                }
             }
         }
     }
-} 
-.event-card__title {
-    background-color: var(--dark-background);
-    margin: -20px -20px 0 -20px;
-    padding: 8px 18px;
-    border-radius: 12px 12px 0 0 ;
-}
 </style>

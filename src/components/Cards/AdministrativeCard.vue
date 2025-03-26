@@ -63,21 +63,16 @@ const itemPath: Contacts = props.itemObject ? dataItems.value[props.item][props.
     </Card>
 </template>
 <style lang="scss" scoped>
+    @import "@/assets/styles/cards"; 
+
     .administrative-card {
         &__title {
-            background-color: var(--dark-background);
-            margin: -20px -20px 0 -20px;
-            padding: 8px 18px;
-            border-radius: 12px 12px 0 0 ;
+            @include card-title
         }
         &__row {
-            display: grid;
-            grid-template-columns: 20px 110px 170px;
-            grid-template-areas: "icon title value";
-            
+            @include card-row-with-icon
         }
     }
-    
     .active {
         color: var(--green-primary)
     }
