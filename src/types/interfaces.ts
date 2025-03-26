@@ -9,7 +9,7 @@ export interface EvendData {
 }
 export interface Events {
   registered: EvendData;
-  transfered: EvendData | null;
+  transferred: EvendData | null;
   updated: EvendData | null;
   unregistered: EvendData | null;
 }
