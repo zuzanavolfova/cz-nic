@@ -10,7 +10,6 @@ import { setDataInStore } from './../stores/setters';
 import type { MenuItem } from 'primevue/menuitem';
 import type { Ref } from 'vue';
 
-
 const store = useStore();
 const userName = computed<string>(() => store.user?.name);
 const userRole = computed<string>(() => store.user?.role);
@@ -51,18 +50,18 @@ const openUserMenu = (event: MouseEvent): void => {
 </template>
 
 <style scoped lang=scss>
-.user-header-button {
-    background-color: var(--blue-primary);
-    border: none;
-    color: white;
-    display: flex;
-    gap: 12px;
-}
-.user-header-button:active {
-    background-color: var(--blue-primary); 
-}
-.p-button:not(:disabled):hover {
-    background-color: var(--blue-primary); 
-    border: none;
-}
+  .user-header-button {
+      background-color: var(--blue-primary);
+      border: none;
+      color: white;
+      display: flex;
+      gap: 12px;
+  }
+  .user-header-button:active {
+      background-color: var(--blue-primary); 
+  }
+  .p-button:not(:disabled):hover {
+      background-color: var(--blue-primary); 
+      border: none;
+  }
 </style>

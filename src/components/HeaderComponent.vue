@@ -2,6 +2,7 @@
 import { ref } from 'vue';
 import UserHeaderComponent from './UserHeaderComponent.vue';
 
+// menu open handler
 const isMenuOpen = ref(false);
 const openMenu = ():void => {
     isMenuOpen.value = !isMenuOpen.value

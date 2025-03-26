@@ -72,9 +72,6 @@
 <style lang="scss" scoped>
     @import "@/assets/styles/cards"; 
     .event-card {
-        width: 100%;
-        padding: 20px;
-        background-color: var(--medium-background);
         &__title  {
             @include card-title
         };

@@ -19,25 +19,25 @@ defineProps({
 </template>
 
 <style scoped lang="scss">
-.side-bar {
-  display: flex;
-  flex-direction: column;
-  width: 160px;
-  height: 100vh;
-  padding: 20px 0;
-  background-color: white;
-  color: var(--text-light-grey);
-  border-right: 1px solid rgb(196, 195, 195);
-  
-  &__title {
-    font-size: 18px;
-    padding: 6px 8px;
-  }
-  
-  &__content {
+  .side-bar {
     display: flex;
     flex-direction: column;
+    width: 160px;
+    height: 100vh;
+    padding: 20px 0;
+    background-color: white;
+    color: var(--text-light-grey);
+    border-right: 1px solid rgb(196, 195, 195);
+    
+    &__title {
+      font-size: 18px;
+      padding: 6px 8px;
+    }
+    
+    &__content {
+      display: flex;
+      flex-direction: column;
+    }
   }
-}
 
 </style>
