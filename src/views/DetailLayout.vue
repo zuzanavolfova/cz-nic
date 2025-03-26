@@ -1,15 +1,18 @@
 <script setup lang="ts">
+//import vue functionality and components
 import { defineProps, ref, onMounted, computed, provide } from 'vue';
 import ToggleSwitch from 'primevue/toggleswitch';
 import Card from 'primevue/card';
 import EventCard from './../components/Cards/EventCard.vue';
 import AdministrativeCard from './../components/Cards/AdministrativeCard.vue';
 import AdministrativeCardVerbose from './../components/Cards/AdministrativeCardVerbose.vue';
-import SetCart from './../components/Cards/SetCart.vue';
+import SetCart from '../components/Cards/SetCard.vue';
 
+//import functionality
 import { formatDate } from './../stores/formaters';
 import { useStore } from './../stores/main';
 
+//import types
 import type { StateFlags } from './../types/interfaces';
 
 defineProps({
@@ -31,6 +34,7 @@ const showPassword = ref<boolean>(false);
 const password = computed(() => dataStore.user.password)
 
 </script>
+
 <template>
     <div class="detail-layout">
         <h2> {{ title }}</h2>
@@ -51,8 +55,8 @@ const password = computed(() => dataStore.user.password)
                                 <span v-if="showPassword" @click="showPassword = !showPassword">{{ password }}</span>
                             </div>
                             <div class="detail-layout__content__main__row grid-cols-1">
-                                    <div class="detail-layout__content__main__row__title">Expires at:</div>
-                                    <div> {{ expiresAt }}</div>
+                                <div class="detail-layout__content__main__row__title">Expires at:</div>
+                                <div> {{ expiresAt }}</div>
                             </div>
                         </div>
                     </template>
@@ -64,7 +68,6 @@ const password = computed(() => dataStore.user.password)
                             <h3>State flags:</h3>
                         </div>
                     </template>
-
                     <template #content>
                         <div :style="{display: detailedInfo ? 'flex' : 'block'}">
                             <div>
@@ -147,7 +150,7 @@ const password = computed(() => dataStore.user.password)
             gap: 20px;
             &__main {
                 flex-shrink: 0;
-                width: 1200px;
+                max-width: 1400px;
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
@@ -169,6 +172,7 @@ const password = computed(() => dataStore.user.password)
             &__info {
                 flex-grow: 1;
                 min-width: 400px;
+                max-width: 1400px;
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
@@ -194,7 +198,6 @@ const password = computed(() => dataStore.user.password)
             }
         }
     }
-
     button {
         background-color: var(--blue-primary);
         width: 70px;
