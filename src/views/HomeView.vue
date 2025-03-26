@@ -2,13 +2,6 @@
 import SideBar from '@/components/SideBar.vue';
 import DetailLayout from './DetailLayout.vue';
 
-const sidebarItems = [
-  {
-    label: "Registration",
-    iconPath: "earth.svg"
-  },
-
-];
 </script>
 
 <template>
@@ -19,8 +12,8 @@ const sidebarItems = [
         :key="index" 
         class="side-bar__item"
       >
-        <img :src="`/src/assets/icons/${item.iconPath}`" :alt="item.label">
-        <span>{{ item.label }}</span>
+        <img :src="`/src/assets/icons/earth.svg`" alt="Registry">
+        <span> Registry </span>
       </div>
     </SideBar>
     <DetailLayout title="neviditelna-univerzita.cz"></DetailLayout>
