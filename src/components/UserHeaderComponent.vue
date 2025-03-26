@@ -1,4 +1,3 @@
-Fixed Vue Menu Component with TypeScript
 <script setup lang="ts">
 import { ref, computed } from 'vue';
 import { useStore } from './../stores/main';
@@ -11,8 +10,8 @@ import type { Ref } from 'vue';
 
 
 const store = useStore();
-const userName = computed(() => store.user?.name);
-const userRole = computed(() => store.user?.role);
+const userName = computed<string>(() => store.user?.name);
+const userRole = computed<string>(() => store.user?.role);
 
 const items: Ref<MenuItem[]> = ref([
   { 
@@ -37,7 +36,6 @@ const openUserMenu = (event: MouseEvent): void => {
   <div class="user-header">
     <button @click="openUserMenu" class="p-button user-header-button">
       <i class="bi bi-person-circle"></i>
-      
       <span v-if="userName !== null">{{ userName }}</span>
       <span v-else>Log in</span>
     </button>
