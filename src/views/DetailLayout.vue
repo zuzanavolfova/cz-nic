@@ -5,8 +5,7 @@ import Card from 'primevue/card';
 import EventCard from './../components/Cards/EventCard.vue';
 import AdministrativeCard from './../components/Cards/AdministrativeCard.vue';
 import AdministrativeCardVerbose from './../components/Cards/AdministrativeCardVerbose.vue';
-
-
+import SetCart from './../components/Cards/SetCart.vue';
 
 import { formatDate } from './../stores/formaters';
 import { useStore } from './../stores/main';
@@ -104,6 +103,24 @@ const password = computed(() => dataStore.user.password)
                 <AdministrativeCardVerbose v-if="!detailedInfo" title="Administrative contacts:" items="administrative_contacts"></AdministrativeCardVerbose>
                 <AdministrativeCard v-if="detailedInfo" title="Administrative contacts:" item="administrative_contacts" :item-position=0 :item-object="true"></AdministrativeCard>
                 <AdministrativeCard v-if="detailedInfo" title="Administrative contacts:" item="administrative_contacts" :item-position=1 :item-object="true"></AdministrativeCard>
+                <SetCart title="NSSet:" :item="data.nsset">
+                    <div class="detail-layout__content__info__row">
+                        <span style="grid-area: title;font-weight: 600; align-self: center;"> DNS: </span>
+                        <div style="grid-area: value">
+                            <span> {{ data.nsset.dns[0].name}} ( {{ data.nsset.dns[0].ip_address}} ) </span>
+                            <span> {{ data.nsset.dns[1].name}} ( {{ data.nsset.dns[1].ip_address}} )</span>
+                        </div>
+                    </div>
+                </SetCart>
+                <SetCart title="KeySet:" :item="data.keyset">
+                    <div class="detail-layout__content__info__row">
+                        <span style="grid-area: title;font-weight: 600; align-self: center;"> DNS keys: </span>
+                        <div style="grid-area: value;">
+                            <div> {{ data.keyset.dns_keys[0]}} </div>
+                            <div> {{ data.keyset.dns_keys[1]}} </div>
+                        </div>
+                    </div>
+                </SetCart>
             </div>
         </div>
     </div>
@@ -153,8 +170,11 @@ const password = computed(() => dataStore.user.password)
                 flex-grow: 1;
                 min-width: 400px;
                 display: flex;
-                flex-direction:column;
-                gap: 20px
+                flex-direction: column;
+                gap: 20px;
+                &__row {
+                    @include card-row-no-icon
+                }
             }
         }
     } 
