@@ -44,7 +44,7 @@ const openUserMenu = (event: MouseEvent): void => {
       <span v-if="userName !== null">{{ userName }}</span>
       <span v-else>Log in</span>
     </button>
-    <Menu v-if="userName !== null" ref="menu" :model="items" :popup="true" />
+    <Menu v-if="userName !== null" ref="menu" :model="items" :popup="true" style="position: fixed;"/>
     <LogInDialog v-else></LogInDialog>
   </div>
 </template>
@@ -63,5 +63,8 @@ const openUserMenu = (event: MouseEvent): void => {
   .p-button:not(:disabled):hover {
       background-color: var(--blue-primary); 
       border: none;
+  }
+  .user-header {
+    position: relative
   }
 </style>
