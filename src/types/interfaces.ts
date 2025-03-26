@@ -11,7 +11,7 @@ export interface Events {
   registered: EvendData;
   transfered: EvendData | null;
   updated: EvendData | null;
-  unregistred: EvendData | null;
+  unregistered: EvendData | null;
 }
 
 export interface StateFlags {
