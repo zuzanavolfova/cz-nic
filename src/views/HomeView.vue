@@ -7,7 +7,6 @@ const sidebarItems = [
     label: "Registry",
     iconPath: "earth.svg"
   },
-
 ];
 </script>
 

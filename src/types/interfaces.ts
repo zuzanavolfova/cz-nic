@@ -5,16 +5,16 @@ export interface UserInfo {
   id: number | null
 }
 
-export interface EvendData {
+export interface EventData {
   timestamp: string;
   registrar_handle: string;
 }
 
 export interface Events {
-  registered: EvendData;
-  transferred: EvendData | null;
-  updated: EvendData | null;
-  unregistered: EvendData | null;
+  registered: EventData;
+  transferred: EventData | null;
+  updated: EventData | null;
+  unregistered: EventData | null;
 }
 
 export interface StateFlags {
