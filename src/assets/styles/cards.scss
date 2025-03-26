@@ -2,7 +2,7 @@
 
 @mixin card-row-no-icon {
     display: grid;
-    grid-template-columns: 110px 170px;
+    grid-template-columns: 110px 220px;
     grid-template-areas: "title value";
 }
 
