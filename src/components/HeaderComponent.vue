@@ -29,7 +29,10 @@ const openMenu = ():void => {
         background-color: var(--blue-primary);
         padding: 6px 8px;
         color: white;
-        position:fixed;top:0; left: 0;
+        position:fixed;
+        top:0;
+        left: 0;
+        z-index: 100;
         width: 100%;
         box-shadow: 0px 3px 10px  rgba(0,0,0,0.5);
         display: flex;
