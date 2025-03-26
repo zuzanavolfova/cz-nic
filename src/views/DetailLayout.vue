@@ -4,6 +4,9 @@ import ToggleSwitch from 'primevue/toggleswitch';
 import Card from 'primevue/card';
 import EventCard from './../components/Cards/EventCard.vue';
 import AdministrativeCard from './../components/Cards/AdministrativeCard.vue';
+import AdministrativeCardVerbose from './../components/Cards/AdministrativeCardVerbose.vue';
+
+
 
 import { formatDate } from './../stores/formaters';
 import { useStore } from './../stores/main';
@@ -95,8 +98,9 @@ const detailedInfo = ref<boolean>(false);
             </div>
             <div class="detail-layout__content__info">
                 <AdministrativeCard title="Owner:" item="owner" :item-object="false"></AdministrativeCard>
-                <AdministrativeCard title="Administrative contact:" item="administrative_contacts" :item-position=0 :item-object="true"></AdministrativeCard>
-                <AdministrativeCard title="Administrative contact:" item="administrative_contacts" :item-position=1 :item-object="true"></AdministrativeCard>
+                <AdministrativeCardVerbose v-if="!detailedInfo" title="Administrative contacts:" items="administrative_contacts"></AdministrativeCardVerbose>
+                <AdministrativeCard v-if="detailedInfo" title="Administrative contacts:" item="administrative_contacts" :item-position=0 :item-object="true"></AdministrativeCard>
+                <AdministrativeCard v-if="detailedInfo" title="Administrative contacts:" item="administrative_contacts" :item-position=1 :item-object="true"></AdministrativeCard>
             </div>
         </div>
     </div>
