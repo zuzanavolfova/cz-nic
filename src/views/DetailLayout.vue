@@ -20,13 +20,13 @@ defineProps({
   }
 });
 
+//data to be insert
 const dataStore = useStore();
 const data = computed(() => dataStore.data); 
-
 const expiresAt = computed<string | undefined>(()=>formatDate(data.value?.expires_at));
-
 const dataStateFlags = computed<StateFlags[]>(()=> data.value.state_flags.flags);
 
+//switch to handle verbose view
 const detailedInfo = ref<boolean>(false);
 
 </script>
