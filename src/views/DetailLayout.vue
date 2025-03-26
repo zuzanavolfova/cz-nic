@@ -164,13 +164,13 @@ const detailedInfo = ref<boolean>(false);
     .inactive {
         color: var(--warning-color)
     }
-        :deep(.p-toggleswitch) {
-            &.p-toggleswitch-checked {
-                .p-toggleswitch-slider {
-                    background-color: var(--blue-primary) !important;
-                }
+    :deep(.p-toggleswitch) {
+        &.p-toggleswitch-checked {
+            .p-toggleswitch-slider {
+                background-color: var(--blue-primary) !important;
             }
         }
+    }
 
     button {
         background-color: var(--blue-primary);
