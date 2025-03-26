@@ -14,7 +14,7 @@
 
     const registeredDate: string | undefined = formatDate(dataEvents.value.registered.timestamp);
     const updateDate: string | undefined = formatDate(dataEvents.value.updated.timestamp);
-    const transferDate: string | undefined = formatDate(dataEvents.value.transfered.timestamp);
+    const transferDate: string | undefined = formatDate(dataEvents.value.transferred.timestamp);
     const unregisteredDate: string | undefined =  dataEvents.value.unregistered != null ? formatDate(dataEvents.value.unregistered.timestamp) : undefined;
 </script>
 
