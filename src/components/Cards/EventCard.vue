@@ -9,7 +9,6 @@
 
     //import functionality
     import { formatDate } from './../../stores/formaters';
-    import { getDataTemp } from './../../stores/getters';
     
     const store = useStore();
     const data = computed(() => store.data);
