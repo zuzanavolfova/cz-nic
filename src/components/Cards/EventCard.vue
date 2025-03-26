@@ -2,20 +2,23 @@
     //import vue functionality and components
     import { computed, inject } from 'vue';
     import Card from 'primevue/card';
+    import { useStore } from './../../stores/main';
 
+    //import types
     import { Events } from './../../types/interfaces';
 
     //import functionality
     import { formatDate } from './../../stores/formaters';
     import { getDataTemp } from './../../stores/getters';
     
-    const data = inject('dataItems');
-    const dataEvents = computed<Events>(() => data.events);
+    const store = useStore();
+    const data = computed(() => store.data);
 
-    const registeredDate: string | undefined = formatDate(dataEvents.value.registered.timestamp);
-    const updateDate: string | undefined = formatDate(dataEvents.value.updated.timestamp);
-    const transferDate: string | undefined = formatDate(dataEvents.value.transferred.timestamp);
-    const unregisteredDate: string | undefined =  dataEvents.value.unregistered != null ? formatDate(dataEvents.value.unregistered.timestamp) : undefined;
+    const registeredDate = computed< string | undefined>(() => formatDate(data.value.events.registered.timestamp));
+    const updateDate = computed< string | undefined>(() => formatDate(data.value.events.updated.timestamp));
+    const transferDate = computed< string | undefined>(() => formatDate(data.value.events.transferred.timestamp));
+    const unregisteredDate = computed< string | undefined>(() =>  data.value.events.unregistered != null ? formatDate(data.value.events.unregistered.timestamp) : undefined);
+    const dataEvents = computed<Events[]>(() => data.value.events);
 </script>
 
 <template>

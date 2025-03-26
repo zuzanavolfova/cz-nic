@@ -5,8 +5,8 @@ import Card from 'primevue/card';
 import EventCard from './../components/Cards/EventCard.vue';
 import AdministrativeCard from './../components/Cards/AdministrativeCard.vue';
 
-import { getDataTemp } from './../stores/getters';
 import { formatDate } from './../stores/formaters';
+import { useStore } from './../stores/main';
 
 import type { StateFlags } from './../types/interfaces';
 
@@ -17,16 +17,14 @@ defineProps({
   }
 });
 
-const data = getDataTemp();
-provide('dataItems', data);
+const dataStore = useStore();
+const data = computed(() => dataStore.data); 
 
-const expiresAt: string | undefined= formatDate(data.expires_at);
+const expiresAt = computed<string | undefined>(()=>formatDate(data.value?.expires_at));
 
-const dataStateFlags = computed<StateFlags[]>(()=> data.state_flags.flags);
+const dataStateFlags = computed<StateFlags[]>(()=> data.value.state_flags.flags);
 
 const detailedInfo = ref<boolean>(false);
-
-console.log("component: ", data)
 
 </script>
 <template>

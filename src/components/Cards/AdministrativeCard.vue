@@ -1,6 +1,11 @@
 <script setup lang="ts">
-import { defineProps, ref, onMounted, computed, inject } from 'vue';
+//import vue functionality and components
+import { defineProps, ref, onMounted, computed} from 'vue';
+import { useStore } from './../../stores/main';
 import Card from 'primevue/card';
+
+//import types
+import type { Contacts} from './../../types/interfaces';
 
 const props = defineProps({
   title: {
@@ -21,9 +26,10 @@ const props = defineProps({
     required: false
   }
 });
+const store = useStore();
 
-const dataItems = inject('dataItems');
-const itemPath = props.itemObject ? dataItems[props.item][props.itemPosition] : dataItems[props.item];
+const dataItems =  computed(() => store.data);
+const itemPath: Contacts = props.itemObject ? dataItems.value[props.item][props.itemPosition] : dataItems.value[props.item];
 
 </script>
 
