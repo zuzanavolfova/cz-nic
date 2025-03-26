@@ -102,7 +102,7 @@ const password = computed(() => dataStore.user.password)
                 </Card>
             </div>
             <div class="detail-layout__content__info">
-                <AdministrativeCard title="Owner:" item="owner" :item-object="false"></AdministrativeCard>
+                <AdministrativeCard style="max-width: 930px;" title="Owner:" item="owner" :item-object="false"></AdministrativeCard>
                 <AdministrativeCardVerbose v-if="!detailedInfo" title="Administrative contacts:" items="administrative_contacts"></AdministrativeCardVerbose>
                 <AdministrativeCard v-if="detailedInfo" title="Administrative contacts:" item="administrative_contacts" :item-position=0 :item-object="true"></AdministrativeCard>
                 <AdministrativeCard v-if="detailedInfo" title="Administrative contacts:" item="administrative_contacts" :item-position=1 :item-object="true"></AdministrativeCard>
@@ -172,7 +172,7 @@ const password = computed(() => dataStore.user.password)
             &__info {
                 flex-grow: 1;
                 min-width: 400px;
-                max-width: 1400px;
+                max-width: 827px;
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
