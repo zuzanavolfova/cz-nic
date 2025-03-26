@@ -16,7 +16,7 @@
     const registeredDate = computed< string | undefined>(() => formatDate(data.value.events.registered.timestamp));
     const updateDate = computed< string | undefined>(() => formatDate(data.value.events.updated.timestamp));
     const transferDate = computed< string | undefined>(() => formatDate(data.value.events.transferred.timestamp));
-    const unregisteredDate = computed< string | undefined>(() =>  data.value.events.unregistered != null ? formatDate(data.value.events.unregistered.timestamp) : undefined);
+    const unregisteredDate = computed< string | undefined>(() => data.value.events.unregistered != null ? formatDate(data.value.events.unregistered.timestamp) : undefined);
     const dataEvents = computed<Events[]>(() => data.value.events);
 </script>
 
@@ -30,38 +30,38 @@
         <template #content>
             <div class="event-card__content__container">
                 <div class="event-card__content__row">
-                    <div class="event-card__content__row__title">Create date</div>
-                    <div> {{ registeredDate }}</div>
+                    <span class="event-card__content__row__title">Create date</span>
+                    <span> {{ registeredDate }}</span>
                 </div>
                 <div  class="event-card__content__row">
-                    <div class="event-card__content__row__title">Registrar</div>
-                    <div class="event-card__content__row__text-blue"> {{ dataEvents.registered.registrar_handle }}</div>
+                    <span class="event-card__content__row__title">Registrar</span>
+                    <span class="event-card__content__row__text-blue"> {{ dataEvents.registered.registrar_handle }}</span>
                 </div>
             </div>
             <div class="event-card__content__container">
                 <div class="event-card__content__row">
-                    <div class="event-card__content__row__title">Update date</div>
-                    <div > {{ updateDate }}</div>
+                    <span class="event-card__content__row__title">Update date</span>
+                    <span> {{ updateDate }}</span>
                 </div>
                 <div  class="event-card__content__row">
-                    <div class="event-card__content__row__title">Registrar</div>
-                    <div class="event-card__content__row__text-blue"> {{ dataEvents.updated.registrar_handle }}</div>
+                    <span class="event-card__content__row__title">Registrar</span>
+                    <span class="event-card__content__row__text-blue"> {{ dataEvents.updated.registrar_handle }}</span>
                 </div>
             </div>
             <div class="event-card__content__container">
                 <div class="event-card__content__row">
-                    <div class="event-card__content__row__title">Transfer date</div>
-                    <div > {{ transferDate }}</div>
+                    <span class="event-card__content__row__title">Transfer date</span>
+                    <span> {{ transferDate }}</span>
                 </div>
                 <div class="event-card__content__row">
-                    <div class="event-card__content__row__title">Registrar</div>
-                    <div class="event-card__content__row__text-blue"> {{ dataEvents.transferred.registrar_handle }}</div>
+                    <span class="event-card__content__row__title">Registrar</span>
+                    <span class="event-card__content__row__text-blue"> {{ dataEvents.transferred.registrar_handle }}</span>
                 </div>
             </div>
             <div class="event-card__content__container">
                 <div class="event-card__content__row">
-                    <div class="event-card__content__row__title">Delete date</div>
-                    <div v-if="unregisteredDate !== undefined" > {{ transferDate }}</div>
+                    <span class="event-card__content__row__title">Delete date</span>
+                    <span v-if="unregisteredDate !== undefined" > {{ transferDate }}</span>
                 </div>
             </div>
         </template>
@@ -79,9 +79,6 @@
             @include card-title
         };
         &__content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
             &__container {
                 display: grid;
                 grid-template-columns: 2fr 2fr;
@@ -89,6 +86,8 @@
             &__row {
                 display: grid;
                 grid-template-columns: 2fr 2fr;
+                gap: 10px;
+                margin-right:20px ;
                 &__title {
                     font-weight: 600;
                 }
