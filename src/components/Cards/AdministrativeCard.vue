@@ -43,19 +43,19 @@ const itemPath: Contacts = props.itemObject ? dataItems.value[props.item][props.
         <template #content>
             <div class="administrative-card__container">
                 <div class="administrative-card__row">
-                    <span style="grid-area: title"> Handle: </span>
+                    <span style="grid-area: title; font-weight: 600;"> Handle: </span>
                     <span style="grid-area: value; color: var(--blue-primary)"> {{ itemPath.handle}} </span>
                 </div>
                 <div class="administrative-card__row">
                     <i v-if="itemPath.publish.organization" class="bi bi-eye-fill active"></i>
                     <i v-else class="bi bi-eye-slash-fill inactive"></i>
-                    <span> Organization: </span>
+                    <span style="font-weight: 600"> Organization: </span>
                     <span> {{ itemPath.organization}} </span>
                 </div>
                 <div class="administrative-card__row">
                     <i v-if="itemPath.publish.name" class="bi bi-eye-fill active"></i>
                     <i v-else class="bi bi-eye-slash-fill inactive"></i>
-                    <span> Name: </span>
+                    <span style="font-weight: 600"> Name: </span>
                     <span> {{ itemPath.name}} </span>
                 </div>
             </div>
