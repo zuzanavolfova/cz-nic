@@ -5,6 +5,8 @@ import { useStore } from './../stores/main';
 import Menu from 'primevue/menu';
 import LogInDialog from './Dialogs/LogInDialog.vue';
 
+import { setDataInStore } from './../stores/setters';
+
 import type { MenuItem } from 'primevue/menuitem';
 import type { Ref } from 'vue';
 
@@ -12,6 +14,10 @@ import type { Ref } from 'vue';
 const store = useStore();
 const userName = computed<string>(() => store.user?.name);
 const userRole = computed<string>(() => store.user?.role);
+
+const logOut = () => {
+  ['name', 'id', 'password', 'admin'].forEach(property => setDataInStore('user', property, null));
+};
 
 const items: Ref<MenuItem[]> = ref([
   { 
@@ -22,7 +28,7 @@ const items: Ref<MenuItem[]> = ref([
   { 
     label: 'Logout', 
     icon: 'pi pi-sign-out', 
-    command: () => console.log('TODO action log out') 
+    command: () => logOut()
   }
 ]);
 
