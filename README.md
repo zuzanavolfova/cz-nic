@@ -5,6 +5,9 @@ This project uses:
     Pinia for store management
     Prime vue for components
 
+Commits with prefix 001 consists of basic requirements
+Commits with prefix 002 consist of additional functionality after submission 
+
 ## Project Setup
 
 ```sh
