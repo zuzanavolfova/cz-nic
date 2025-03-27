@@ -11,13 +11,16 @@ import type { MenuItem } from 'primevue/menuitem';
 import type { Ref } from 'vue';
 
 const store = useStore();
-const userName = computed<string>(() => store.user?.name);
-const userRole = computed<string>(() => store.user?.role);
+const userName = computed<string>(() => store.user?.name || '');
+const userRole = computed<string>(() => store.user?.role || '');
 
 const logOut = () => {
   ['name', 'id', 'password', 'admin'].forEach(property => setDataInStore('user', property, null));
 };
-
+const loginDialogIsOpen= ref<boolean>(false);
+const openLoginDialog = (value: boolean): void =>  {
+  loginDialogIsOpen.value = value
+}
 const items: Ref<MenuItem[]> = ref([
   { 
     label: () => `${userName.value}  ${userRole.value}`, 
@@ -41,11 +44,11 @@ const openUserMenu = (event: MouseEvent): void => {
   <div class="user-header">
     <button @click="openUserMenu" class="p-button user-header-button">
       <i class="bi bi-person-circle"></i>
-      <span v-if="userName !== null">{{ userName }}</span>
-      <span v-else>Log in</span>
+      <span v-if="userName">{{ userName }}</span>
+      <span v-else @click.stop="openLoginDialog(true)">Log in</span>
     </button>
-    <Menu v-if="userName !== null" ref="menu" :model="items" :popup="true" style="position: fixed;"/>
-    <LogInDialog v-else></LogInDialog>
+    <Menu v-if="userName" ref="menu" :model="items" :popup="true" style="position: fixed;"/>
+    <LogInDialog v-if="loginDialogIsOpen" @close="loginDialogIsOpen = false"></LogInDialog>
   </div>
 </template>
 
